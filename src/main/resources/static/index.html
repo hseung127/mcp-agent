@@ -1,0 +1,17 @@
+<textarea id="input"></textarea><br>
+<input id="model" value="llama3.2:1b"><br>
+<button onclick="send()">Send</button>
+<pre id="result"></pre>
+
+<script>
+
+    function send() {
+        fetch(`/api/agent/chat?model=${model.value}`, {
+            method: 'POST',
+            headers: {'Content-Type':'text/plain'},
+            body: input.value
+        })
+            .then(r => r.text())
+            .then(t => result.innerText = t);
+    }
+</script>

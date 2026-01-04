@@ -9,5 +9,4 @@ public class McpAgentApplication {
     public static void main(String[] args) {
         SpringApplication.run(McpAgentApplication.class, args);
     }
-
 }
